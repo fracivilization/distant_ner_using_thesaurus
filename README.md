@@ -1,5 +1,12 @@
-# two-stage-distant-ner
-Two Stage Distant NER (Using NP Chunker)
+# Distant Supervision NER using Thesaurus
+Distant Supervision using Thesaurus
+
+# Setup python environment
+This repository use poetry.
+So, please run ...
+```sh
+poetry install
+```
 
 ## Preprocess for UMLS
 1. Please Dwonload 2021AA-full from https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html"
@@ -19,3 +26,16 @@ Two Stage Distant NER (Using NP Chunker)
        1.  Select all
     7. Done>Begin Subset> Would you like to save the changes?: No
     8.  MetamorphoSys Subset Log>OK
+
+# Run main experiment
+```sh
+./scripts/main.sh
+```
+# Run experiment selecting 10 categories one by one
+```sh
+./scripts/select_1cat_exp.sh
+```
+# Run experiment in supervised setting in varying the size of supervised dataset
+```sh
+./scripts/check_supervised.sh
+```
