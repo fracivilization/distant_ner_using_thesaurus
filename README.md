@@ -13,7 +13,7 @@ poetry install
 2. unzip the folder and unzip the mmsys system
 3. Run Metamorphosys
     ```sh
-    ./run_linux.sh # or ./run_mc.sh or run.bat
+    ./run_linux.sh # or ./run_mac.sh or run.bat
     ```
     1. Press "Install UMLS"
     2. Set Install Settings
