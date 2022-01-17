@@ -1,13 +1,13 @@
 # Distant Supervision NER using Thesaurus
 Distant Supervision using Thesaurus
 
-# Setup python environment
+# Setup
+## Setup python environment
 This repository use poetry.
 So, please run ...
 ```sh
 poetry install
 ```
-
 ## Preprocess for UMLS
 1. Please Dwonload 2021AA-full from https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html"
 2. unzip the folder and unzip the mmsys system
@@ -27,15 +27,16 @@ poetry install
     7. Done>Begin Subset> Would you like to save the changes?: No
     8.  MetamorphoSys Subset Log>OK
 
-# Run main experiment
+# Experiments
+## Run main experiment
 ```sh
 ./scripts/main.sh
 ```
-# Run experiment selecting 10 categories one by one
+## Run experiment selecting 10 categories one by one
 ```sh
 ./scripts/select_1cat_exp.sh
 ```
-# Run experiment in supervised setting in varying the size of supervised dataset
+## Run experiment in supervised setting in varying the size of supervised dataset
 ```sh
 ./scripts/check_supervised.sh
 ```
