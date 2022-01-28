@@ -12,8 +12,6 @@ from src.builder import dataset_builder, ner_model_builder
 import logging
 from src.evaluator import NERTestor, NERTestorConfig
 from src.ner_model.two_stage import TwoStageModel
-from src.ner_model.bert import register_BERT_configs
-from src.ner_model.bond import register_BOND_configs
 from src.ner_model.two_stage import register_two_stage_configs
 from src.evaluator import register_ner_testor_configs
 from src.utils.mlflow import MlflowWriter
@@ -34,8 +32,6 @@ class TrainConfig:
 cs = ConfigStore.instance()
 cs.store(name="base_train_config", node=TrainConfig)
 cs.store(group="ner_model", name="base_ner_model_config", node=NERModelConfig)
-register_BERT_configs()
-register_BOND_configs()
 register_two_stage_configs()
 register_ner_matcher_configs()
 register_ner_testor_configs()

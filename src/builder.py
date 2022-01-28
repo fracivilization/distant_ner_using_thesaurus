@@ -3,8 +3,6 @@ from typing import NewType
 from src.ner_model.abstract_model import NERModel, NERModelConfig, NERModel
 from src.dataset.utils import DatasetConfig
 from datasets import DatasetDict, load_dataset
-from src.ner_model.bert import BERTNERModel
-from src.ner_model.bond import BONDNERModel
 from src.ner_model.two_stage import TwoStageConfig, TwoStageModel
 from datasets import DatasetDict
 from logging import getLogger
@@ -38,11 +36,7 @@ def dataset_builder(config: DatasetConfig) -> DatasetDict:
 def ner_model_builder(
     config: NERModelConfig, datasets: DatasetDict = None, writer: MlflowWriter = None
 ) -> NERModel:
-    if config.ner_model_name == "BERT":
-        ner_model = BERTNERModel(datasets, config)
-    elif config.ner_model_name == "BOND":
-        ner_model = BONDNERModel(datasets, config)
-    elif config.ner_model_name == "TwoStage":
+    if config.ner_model_name == "TwoStage":
         ner_model = TwoStageModel(config, datasets, writer)
     elif config.ner_model_name == "NERMatcher":
         ner_model = NERMatcherModel(config)
